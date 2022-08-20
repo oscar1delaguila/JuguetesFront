@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config src/proxy.conf.json",
-    "build": "ng build --configuration development",
+    "start2": "ng serve",
+    "build": "ng build",
+    "build2": "ng build --configuration development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test ",
     "dev:ssr": "ng run oag:serve-ssr --proxy-config proxy.conf.json",

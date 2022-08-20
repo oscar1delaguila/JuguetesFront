@@ -47,7 +47,7 @@ export class JuguetesService {
 
 
   getAllJuguetes():Observable<Juguete[]> {
-    return this.http.get<data>( '/juguetes/').pipe(map((data) => { return data.data }));
+    return this.http.get<data>( this.server + '/juguetes/').pipe(map((data) => { return data.data }));
   }
 
   getJugueteById(identifier:number):Observable<Juguete> {
@@ -65,8 +65,5 @@ export class JuguetesService {
   delete(idJuguete:number):Observable<boolean> {
     return this.http.delete<boolean>(`/juguete/${idJuguete}`);
   }
-
-
-
 
 }
