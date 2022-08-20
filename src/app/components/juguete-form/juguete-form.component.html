@@ -1,0 +1,85 @@
+
+
+
+<div style="margin-left: auto; margin-right: auto">
+    <p id="postFeedback"></p>
+  </div>
+  <div class="col-md-7 text-center">
+    <h1>Formulario Juguete</h1>
+    
+    <div class="my-5 text-end">
+
+      <!-- juguete form viene de clicar sobre perfil... -->
+      <a class="btn btn-secondary" routerLink="/perfil">Volver</a>
+    </div>
+
+    <form *ngIf="jugueteForm" [formGroup]="jugueteForm" (ngSubmit)="saveJuguete()">
+      <div class="my-4">
+        <label for="Nombre">Nombre juguete:</label>
+        <input type="text" [formControl]="nombreJuguete" />
+  
+        <div *ngIf="nombreJuguete.errors && nombreJuguete.touched" [ngClass]="'error'">
+            <div *ngIf="nombreJuguete.errors.required">
+                Nombre juguete es obligatorio
+            </div>
+            <div *ngIf="nombreJuguete.errors.maxlength">
+              El nombre del juguete solamente puede ser de 255 caracteres.
+            </div>
+        </div>
+      </div>
+  
+      <div class="my-4">
+        <label for="description">Descripción: </label>
+        <input type="text" [formControl]="descripcion" />
+  
+        <div *ngIf="descripcion.errors && descripcion.touched" [ngClass]="'error'">
+            <div *ngIf="descripcion.errors.required">
+                Descripción es obligatorio
+            </div>
+  
+            <div *ngIf="descripcion.errors.maxlength">
+              Descripción como mucho 1000 caracteres.
+            </div>
+        </div>
+      </div>
+  
+      <div class="my-4">
+        <label for="fechaPublicacion">Fecha publicación: </label>
+        <input type="date" [formControl]="fechaPublicacion" />
+
+        <div  *ngIf="fechaPublicacion.errors && fechaPublicacion.touched" [ngClass]="'error'" >
+          <div *ngIf="fechaPublicacion.errors.required">
+            Fecha publicación es requerido.
+          </div>
+        </div>
+      </div>
+  
+
+
+      <div class="my-4">
+        <label for="categorias">Escoge las categorias:</label>
+        <select multiple [formControl]="categorias">
+          
+          <option *ngFor="let categoria of categoriasLista"  [ngValue]="categoria.id" >
+            {{ categoria.nombre_categoria }}
+          </option>
+        </select>
+      </div>
+  
+
+      <div>
+        <label for="imagen">Imágenes juguetes: </label>
+        <input type="file" [formControl]="imagenFile" />
+
+        <div  *ngIf="imagenFile.errors && imagenFile.touched" [ngClass]="'error'" >
+          <div *ngIf="imagenFile.errors.required">
+            Selecciona una imagen.
+          </div>
+        </div>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary m-4" [disabled]="jugueteForm.invalid" >Guardar</button>
+    </form>
+  </div>
+  

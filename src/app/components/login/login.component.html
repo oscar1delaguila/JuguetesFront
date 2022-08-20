@@ -1,0 +1,32 @@
+
+
+
+<form *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="login()" class="text-center">
+    
+    
+    <div class="my-4">
+        <label for="Nombre">Email de usuario:</label>
+        <input type="email" [formControl]="email" />
+  
+        <div *ngIf="email.errors && email.touched" [ngClass]="'error'">
+            <div *ngIf="email.errors.required">
+                El email de usuario es obligatorio.
+            </div>
+        </div>
+      </div>
+
+      <div class="my-4">
+        <label for="password">Contraseña de usuario:</label>
+        <input type="password" [formControl]="password" />
+  
+        <div *ngIf="password.errors && password.touched" [ngClass]="'error'">
+            <div *ngIf="password.errors.required">
+                El email de usuario es obligatorio.
+            </div>
+        </div>
+      </div>
+    
+
+      <button type="submit" class="btn btn-primary m-4" [disabled]="loginForm.invalid" >Guardar</button>
+
+</form>

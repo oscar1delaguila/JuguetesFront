@@ -1,0 +1,38 @@
+
+<div class="text-center my-5 fs-1">
+    <p class="">Juguetes disponibles</p>
+</div>
+
+<div class="content">
+    
+    <div *ngIf="!loaded">
+        <mat-spinner class="mx-auto"></mat-spinner>
+    </div>
+
+    <div *ngIf="juguetes">
+        <div fxLayout="row wrap" fxLayoutGap ="16px grid">
+                <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%"  *ngFor="let juguete of juguetes "  > 
+                    <a class="text-decoration-none "  [routerLink]="['/juguete/', juguete.id  ]" >
+                    <div class="animate__animated animate__pulse ">
+                        <mat-card class="example-card ">
+
+                            <img src="../../../assets/images/{{juguete.path_imagen}}" class="img-fluid mb-4">
+
+                            <mat-card-title-group>
+                                <mat-card-title> {{ juguete.nombre_juguete }}</mat-card-title>
+                                <mat-card-subtitle> {{ juguete.fecha_publicacion }}</mat-card-subtitle>
+                            </mat-card-title-group>
+                            <mat-card-content>
+                                <p>Descripción:</p>
+                                <p>{{ juguete.descripcion }}</p>
+                                
+                            </mat-card-content>
+                        </mat-card>
+                    </div>    
+                    </a>
+                </div>
+        </div>
+    </div>
+    
+    
+</div>

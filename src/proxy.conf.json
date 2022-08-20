@@ -1,0 +1,42 @@
+
+
+{
+
+
+    "/juguetesxxx/*" : {
+        "target":"http://localhost:8000/",
+        "secure":"false"
+    },
+
+    "/juguetexxx/*" : {
+        "target":"http://localhost:8000/",
+        "secure":"false"
+    },
+
+    "/categoriasxxx/*" : {
+        "target":"http://localhost:8000/",
+        "secure":"false"
+    },
+
+    "/categoriaxxx/*" : {
+        "target":"http://localhost:8000/",
+        "secure":"false"
+    },
+
+
+    "/juguetes/*" : {
+        "target":"https://gegantoys.com",
+        "secure":"true"
+    },
+
+    "/juguete/*" : {
+        "target":"https://gegantoys.com",
+        "secure":"true"
+    },
+
+    "/categorias/*" : {
+        "target":"https://gegantoys.com",
+        "secure":"true"
+    }
+
+}

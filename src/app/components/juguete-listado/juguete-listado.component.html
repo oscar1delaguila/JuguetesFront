@@ -1,0 +1,27 @@
+
+<div class="content mx-5">
+    
+    
+    <div *ngIf="juguetes">
+
+        <div *ngFor="let juguete of juguetes "  > 
+            <a class="text-decoration-none "  [routerLink]="['/juguete-form/', juguete.id  ]" >
+
+                <mat-card class="example-card">
+                    <div class="row">
+                        <div mat-card-sm-image class="col-6">
+                            <img src="../../../assets/images/{{ juguete.path_imagen }}" class="img-fluid mb-2" >
+                        </div>
+                        <div class="col-6">
+                            <p>{{ juguete.nombre_juguete }}</p>
+                        </div>
+                    </div>
+                </mat-card>
+            </a>
+            <button type="button" class="btn btn-info mb-5 mt-2" (click)="editar(juguete.id)">Editar</button> 
+            <button type="button" class="btn btn-danger mb-5 mt-2 mx-2" (click)="eliminar(juguete.id)">Eliminar</button>
+        </div>
+    </div>
+    
+    
+</div>

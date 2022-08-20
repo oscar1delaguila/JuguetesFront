@@ -1,0 +1,39 @@
+
+<div class="mx-auto">
+<ul class="nav nav-pills ">
+    <li class="nav-item">
+      <a  class="nav-link " routerLink="/login" routerLinkActive="active" aria-current="page" >Login</a>
+    </li>
+ 
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" routerLinkActive="active" routerLink="/perfil" data-bs-toggle="dropdown" role="button" aria-expanded="false">Perfil</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/perfil" >Lista de deseos</a></li>
+        <li><a class="dropdown-item" routerLink="/perfil" >Historial Pedidos</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" routerLink="/perfil" >Datos personales</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/juguetes" routerLinkActive="active" >Juguetes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled " routerLink="/garantias" routerLinkActive="active"  tabindex="-1" aria-disabled="true">Garantías</a>
+    </li>
+  
+</ul>
+</div>
+
+<!--
+<div >
+    <span><a routerLink="/login" routerLinkActive="active" class="links">Login</a></span>
+    <span><a routerLink="/perfil" routerLinkActive="active" class="links">Tu Perfil</a></span>
+    <span><a routerLink="/juguetes-segunda" routerLinkActive="active" class="links" >Juguetes de Segunda</a></span>
+    <span><a routerLink="/juguetes-amazon" routerLinkActive="active" class="links">Nuevos de Amazon</a></span>
+    <span><a routerLink="/garantias" routerLinkActive="active" class="links">Garantías EkoGame</a></span>
+</div>
+-->
+
+<router-outlet></router-outlet>
+      
