@@ -48,7 +48,7 @@ export class JuguetesService {
   getAllJuguetes():Observable<Juguete[]> {
 
     
-    return this.http.get<data>( '/api/juguetes/',{ headers: this.headers }).pipe(map((data) => { return data.data }));
+    return this.http.get<data>( this.server +'/api/juguetes/',{ headers: this.headers }).pipe(map((data) => { return data.data }));
   }
 
   getJugueteById(identifier:number):Observable<Juguete> {

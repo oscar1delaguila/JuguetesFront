@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1661185429457,
+  "timestamp": 1661186415324,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.970af2f8ebc544db.js",
+        "/main.5ee770d9fbf0fe2f.js",
         "/manifest.webmanifest",
         "/polyfills.d3c8208c6e2f9528.js",
         "/runtime.2ad7f847d3c9b2a3.js",
@@ -84,8 +84,8 @@
     "/assets/images/juguete3.jpg": "dc82757255205cb04d4fec475c62da19cfa75115",
     "/assets/images/monedas.jpg": "4eea2302d3d0c16c379f07ec52936a8cbc9b26a3",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "0a7fce422bd693f34fe0c50d27443d96fb58550f",
-    "/main.970af2f8ebc544db.js": "1174ab0bacd1f66994f94cd87aed74b4c44cc122",
+    "/index.html": "49fed186ca67b953e75eb43b91ae522e8f453776",
+    "/main.5ee770d9fbf0fe2f.js": "ee6a3c9a1557255d9e988c9be0cd69a6c7e6b9bd",
     "/manifest.webmanifest": "6171d19ef1c9da7bf3a29726e4363e495743a1fb",
     "/polyfills.d3c8208c6e2f9528.js": "719479d83b97c1e9384ebd469973682432b692f8",
     "/runtime.2ad7f847d3c9b2a3.js": "23b957fd8992ebce8a4d89a9fa85797cce40cbbf",
