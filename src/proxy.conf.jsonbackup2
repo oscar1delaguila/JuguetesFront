@@ -1,0 +1,55 @@
+
+
+{
+
+    "/api":{
+        "target":"https://gegantoys.com",
+        "secure":true,
+        "pathRewrite": {
+            "^/api":""
+        },
+        "context": ["/juguetes"]
+
+
+    },
+
+    "/juguetesxxx/*" : {
+        "target":"http://localhost:8000/",
+        "secure":"false"
+    },
+
+    "/juguetexxx/*" : {
+        "target":"http://localhost:8000/",
+        "secure":"false"
+    },
+
+    "/categoriasxxx/*" : {
+        "target":"http://localhost:8000/",
+        "secure":"false"
+    },
+
+    "/categoriaxxx/*" : {
+        "target":"http://localhost:8000/",
+        "secure":"false"
+    },
+
+
+    "/juguetes" : {
+        "target":"https://gegantoys.com",
+        "secure":true,
+        "changeOrigin": true
+    },
+
+    "/juguete/*" : {
+        "target":"https://gegantoys.com/api",
+        "secure":true,
+        "changeOrigin": true
+    },
+
+    "/categorias/*" : {
+        "target":"https://gegantoys.com",
+        "secure":true,
+        "changeOrigin": true
+    }
+
+}

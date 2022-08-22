@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { data } from '../models/data.interface';
 import { Juguete } from '../models/juguete.interface';
 
@@ -9,17 +10,15 @@ import { Juguete } from '../models/juguete.interface';
 })
 export class JuguetesService {
 
-  server: string;
-  headers:HttpHeaders;
+  headers = new HttpHeaders();
+  //server = "https://backend.gegantoys.com";
+  server = "https://backend.gegantoys.com";
+
 
 
   constructor(private http: HttpClient) { 
 
-    //this.server =  "http://localhost:8000";
-    this.server =  "https://gegantoys.com";
-    this.headers = new HttpHeaders();
-    this.headers.set('content-type', 'application/json');
-    this.headers.set('Access-Control-Allow-Origin','*');
+      this.headers.set('content-type','application/json').set('Access-Control-Allow-Origin','*');
 
   }
 
@@ -47,23 +46,28 @@ export class JuguetesService {
 
 
   getAllJuguetes():Observable<Juguete[]> {
-    return this.http.get<data>( this.server + '/juguetes/',{ headers:this.headers }).pipe(map((data) => { return data.data }));
+
+    
+    return this.http.get<data>( '/api/juguetes/',{ headers: this.headers }).pipe(map((data) => { return data.data }));
   }
 
   getJugueteById(identifier:number):Observable<Juguete> {
-    return this.http.get<data>( '/juguete/' + identifier).pipe(map((data) => { return data.data }));
+    return this.http.get<data>( this.server + 'api/juguete/' + identifier, { headers: this.headers }).pipe(map((data) => { return data.data }));
   }
 
   add(juguete:Juguete):Observable<Juguete>{
-    return this.http.post<Juguete>('/juguete/', juguete);
+    return this.http.post<Juguete>(this.server + '/juguete/', juguete, { headers: this.headers });
   }
 
   update(juguete:Juguete):Observable<Juguete> {
-    return this.http.put<Juguete>(`/juguete/${juguete.id}`, juguete);
+    return this.http.put<Juguete>(`/juguete/${juguete.id}`, juguete , { headers: this.headers });
   }
 
   delete(idJuguete:number):Observable<boolean> {
-    return this.http.delete<boolean>(`/juguete/${idJuguete}`);
+    return this.http.delete<boolean>(`/juguete/${idJuguete}`, { headers: this.headers } );
   }
+
+
+
 
 }
